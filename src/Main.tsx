@@ -7,12 +7,13 @@ function Main() {
 
     useEffect(() => {
         async function getImages() {
-            // const response:[] = await axios(`${process.env.REACT_APP_SERVER}/getphotos`);
-            // setImages(response);
-            await setImages(data) // replace this with axios call
+            const {data} = await axios(`${process.env.REACT_APP_SERVER}/photos`);
+            console.log(data);
+            setImages(data);
+            // await setImages(data) // replace this with axios call
         }
         getImages();
-    })
+    }, [])
     console.log(images)
     const result = images.map(image => {
         return <img src={image.image_url} alt={image._id}></img>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import data from './data.json'
 
 function Main() {
     const [images, setImages] = useState<any[]>([]);
